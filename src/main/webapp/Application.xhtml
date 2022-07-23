@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Form Example</title>
+<script type="text/javascript">
+// checksubmit() has to be a function, not a subroutine, because the
+// onsubmit attribute in the form tag (in red text below) which calls
+// this function requires a Boolean return value of true or false
+// if the return is true, the form is automatically submitted without
+// the need to call document.formname.submit()
+// if the return is false, the form submission will be aborted and the client is sent
+// back to the form to fill out the missing field
+function checksubmit()
+{
+   // check to see if name field is empty
+   // note that you use the name of the form and the field
+   if (document.formname.fullname.value == "")
+   {
+      // tell client that you need the name
+      alert("Please enter your full name")
+      // send the cursor to the fullname field
+      document.formname.fullname.focus()
+
+ 
+
+      // field is empty, so return false to abort the form submission
+      // the client is returned to the form
+      return false
+   }
+   // check to see if email address field is empty
+   if (document.formname.emailaddress.value == "")
+   {
+      alert("Please enter your email address")
+      document.formname.emailaddress.focus()
+      return false
+   }
+   // if both fields are filled out, return true
+   // this triggers the form submission
+   return true
+}
+</script>
+</head>
+<body onload="document.formname.fullname.focus()">
+If you wish to receive information about upgrades to dgCharge,
+please fill out this form.
+<br />
+<form method="get" name="formname" id="formname"
+     action="xhtml_form.htm"
+     onsubmit="return checksubmit()">
+<br/>
+<br/>
+<br/>
+<br/>
+Name of Customer (required)<input type="text" name="fullname" size="80" />
+<br />
+<br/>
+EmailAddress (required)<input type="text" name="emailaddress" size="30" />
+<br />
+<br/>
+Phone Number (optional)<input type="text" name="phonenumber" size="15" />
+<br />
+<br/>
+
+AddressLine1 (required)<input type="text" name="address" size="100" />
+<br />
+<br/>
+AddressLine2(optional)<input type="text" name="address" size="15" />
+<br />
+<br/>
+city(required)<input type="text" name="city" size="15" />
+<br/>
+<br/>
+Fixed Income(optional)<input type="text" name="address" size="15" />
+<br/>
+<br/>
+Resident Details(required)<input type="text" name="address" size="15" />
+<br/>
+<br/>
+General condition of house(required)<input type="text" name="address" size="15" />
+<br/>
+<br/>
+Description of work to be done(required)<input type="text" name="address" size="15" />
+<br/>
+<br/>
+How will the home owner and family members be assist in the repair of their house(optional)<input type="text" name="address" size="15" />
+<br/>
+<br/>
+
+<input type="reset" value="Clear" />
+<input type="submit" name="submitbtn" value="Submit" />
+</form>
+<style>
+body{background-color: #EAE5E4;}
+ 
+</style>
+ </body>
+
+
+</html>
